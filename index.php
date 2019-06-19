@@ -6,15 +6,12 @@ require __DIR__ .  '/vendor/autoload.php';
 
 // Create Router instance
 $router = new Router;
+$router->setNamespace('\App\Controller');
 
 // Define routes
-$router->get('/hello', function() {
-    echo "Hello world";
-});
+$router->get('/articles', 'ArticlesController@index');
 
-$router->get('/article/{id}', function($id) {
-    echo "Voici l'article #" . $id;
-});
+$router->get('/medias', 'MediasController@index');
 
 // Run it!
 $router->run();
