@@ -1,15 +1,20 @@
 <?php
+use Bramus\Router\Router;
 
+// Require composer autoloader
 require __DIR__ .  '/vendor/autoload.php';
 
-$articles = [
-    'premier article',
-    'deuxieme article',
-    'article cool',
-    'article marrant',
-    'article serieux'
-];
+// Create Router instance
+$router = new Router;
 
-var_dump($articles);
+// Define routes
+$router->get('/hello', function() {
+    echo "Hello world";
+});
 
-dump($articles);
+$router->get('/article/{id}', function($id) {
+    echo "Voici l'article #" . $id;
+});
+
+// Run it!
+$router->run();
