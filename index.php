@@ -9,9 +9,19 @@ $router = new Router;
 $router->setNamespace('\App\Controller');
 
 // Define routes
-$router->get('/articles', 'ArticlesController@index');
+$router->get('/types', 'TypesController@index');
+
+$router->get('/type/{id}','TypesController@show');
+
 
 $router->get('/medias', 'MediasController@index');
+
+$router->get('/media/{id}', 'MediasController@show');
+
+
+$router->get('/users', 'UserController@index');
+
+$router->get('/user/{id}', 'UserController@show');
 
 // Run it!
 $router->run();

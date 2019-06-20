@@ -22,4 +22,14 @@ class MediasController {
 
     }
 
+    public function show($id) {
+
+        $media = $this->manager->getMedia($id);
+        
+        echo "Média #" . $id;
+
+        dump($media);
+
+    }
+
 }
